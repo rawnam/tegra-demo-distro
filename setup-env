@@ -131,3 +131,32 @@ fi
 for var in $(echo $TD_VARS OEROOT); do unset $var; done; unset var
 
 [ -z "$BUILDDIR" ] || cd "$BUILDDIR"
+
+
+# # After existing setup logic, add the following code to include meta-ros layers
+# BBLAYERS_CONF="$BUILDDIR/conf/bblayers.conf"
+# ROS_LAYERS="$TD_TOP/layers/meta-ros"
+
+# # Insert ROS layers before the closing quote
+# if ! grep -q "$ROS_LAYERS" "$BBLAYERS_CONF"; then
+#     echo "Adding ROS meta-layers to bblayers.conf"
+#     sed -i "/\"$/i \  $ROS_LAYERS/meta-ros2 \\\\" "$BBLAYERS_CONF"
+#     sed -i "/\"$/i \  $ROS_LAYERS/meta-ros2-humble \\\\" "$BBLAYERS_CONF"
+#     sed -i "/\"$/i \  $ROS_LAYERS/meta-ros-common \\\\" "$BBLAYERS_CONF"
+# fi
+
+
+# # Add ROS specific settings to local.conf
+# LOCAL_CONF="$BUILDDIR/conf/local.conf"
+
+# # Add ROS settings only if not already present
+# if ! grep -q "ROS_OE_RELEASE_SERIES" "$LOCAL_CONF"; then
+#     echo "Adding ROS specific configurations to local.conf"
+#     echo "# define the ROS 2 Yocto target release" >> "$LOCAL_CONF"
+#     echo "ROS_OE_RELEASE_SERIES = \"kirkstone\"" >> "$LOCAL_CONF"
+# fi
+
+# if ! grep -q "ROS_DISTRO" "$LOCAL_CONF"; then
+#     echo "# define ROS 2 distro" >> "$LOCAL_CONF"
+#     echo "ROS_DISTRO = \"humble\"" >> "$LOCAL_CONF"
+# fi

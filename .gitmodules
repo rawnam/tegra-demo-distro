@@ -18,3 +18,8 @@
 	path = repos/meta-tegra-community
 	url = https://github.com/OE4T/meta-tegra-community
 	branch = kirkstone
+[submodule "repos/meta-ros"]
+	path = repos/meta-ros
+	url = https://github.com/robwoolley/meta-ros.git
+	branch = superflore/humble/2022-09-30
+
