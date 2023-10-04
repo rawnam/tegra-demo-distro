@@ -2,3 +2,7 @@ build*/
 *~
 *.pyc
 *.pyo
+layers/meta-ros
+layers/meta-aras
+.vscode-ctags
+

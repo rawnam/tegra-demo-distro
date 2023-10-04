@@ -248,3 +248,10 @@ PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 # track the version of this file when it was generated. This can safely be ignored if
 # this doesn't mean anything to you.
 CONF_VERSION = "2"
+
+
+# By default, the tegraflash package for the AGX Xavier is set up for flashing the on-
+# board eMMC. If you want to boot your Xavier off an SDcard instead, you should add the
+# following to your build configuration (e.g., in $BUILDDIR/conf/local.conf):
+TEGRA_ROOTFS_AND_KERNEL_ON_SDCARD = "1"
+ROOTFSPART_SIZE = "15032385536"
